@@ -26,7 +26,8 @@ i.fa {
 .main {
     background-image: url(../img/background__main.jpg);
     background-repeat: repeat-x;
-    animation: slide 90s linear infinite;
+    background-size: cover;
+    animation: slide 40s linear infinite;
 }
 .app {
     height: 100vh;
@@ -34,9 +35,10 @@ i.fa {
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
+
 }
 .app__header {
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(255, 255, 255, 0.3);
     border-bottom: 7px solid #fdb54d;
     min-height: 247px;
     display: flex;
@@ -171,4 +173,18 @@ i.fa {
 .btn_achivment {
     background-color: rgba(0,0,0,0.5);
     border: 5px solid rgba(1,88,154,0.5);
+}
+.app__heder-inner {
+    color: #fff;
+    text-align: center;
+}
+.app__count {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.app__text {
+    font-size: 18px;
+}
+.app__text-cont {
+    font-size: 35px;
 }
