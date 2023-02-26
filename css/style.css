@@ -1,0 +1,81 @@
+@font-face {
+    font-family: "Yanone";
+    src: url(../fonts/YanoneKaffeesatz-Medium.ttf)
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Yanone", sans-serif;
+}
+i.fa {
+    font-size: 30px;
+    margin-right: 10px;
+}
+@keyframes slide {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 0%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+.main {
+    background-image: url(../img/background__main.jpg);
+    background-repeat: repeat-x;
+    animation: slide 90s linear infinite;
+}
+.app {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.app__header {
+    background-color: rgba(0,0,0,0.5);
+    border-bottom: 7px solid #fdb54d;
+    min-height: 247px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10px;
+}
+.app__logo {
+    padding: 20px 0;
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+}
+.app__body {
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    overflow: auto;
+}
+.app_btn {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 50px;
+    width: 240px;
+    background-color: #1978d3;
+    box-shadow: 0 7px 0 0 #01579a;
+    margin: 0 auto;
+    border-radius: 30px;
+    text-decoration: none;
+    font-style: 16px;
+    line-height: 20px;
+    color: #fff;
+    text-transform: uppercase;
+}
+.app_btn:focus {
+    outline: none;
+}
