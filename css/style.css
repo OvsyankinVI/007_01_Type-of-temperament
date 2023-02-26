@@ -79,3 +79,96 @@ i.fa {
 .app_btn:focus {
     outline: none;
 }
+
+.achivments .abb__body {
+    justify-content: flex-start;
+}
+.app__body-inner {
+     width: 100px;
+     min-width: 375px;
+     margin: 0 auto;
+     color: #fff;
+     flex-direction: column;
+     padding: 20px;
+}
+.app__body-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 25px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+.app__body-top {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: max-content max-content;
+    place-content: center center;
+    margin-bottom: 20px;
+}
+.app__card {
+    background-color: rgba(0,0,0,0.5);
+    padding: 20px 10px;
+    border: 5px solid rgb(1,88,154,0.5);
+    text-align: center;
+}
+.app__card:nth-child(1) {
+    border-right: none;
+    border-bottom: none;
+}
+.app__card:nth-child(2) {
+    border-left: none;
+    border-bottom: none;
+}
+.app__card:nth-child(3) {
+    border-right: none;
+    border-top: none;
+}
+.app__card:nth-child(4) {
+    border-left: none;
+    border-top: none;
+}
+.app__card-text {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.app__card-count {
+    font-size: 18px;
+}
+.app__body-middle {
+    margin-bottom: 15px;
+}
+.app_result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    border: 5px solid rgba(1,88,154,0.5);
+    background-color: rgba(25,121,211,0.8);
+    margin-bottom: 7px;
+}
+.app_result:last-child {
+    margin-bottom: 0;
+}
+.fa-star {
+    margin-right: 0;
+    font-size: 15px;
+    margin-bottom: 3px;
+}
+.app__result-name {
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: 20px;
+}
+.app__result-amount {
+    font-size: 18px;
+}
+.btn__black {
+    width: 70px;
+    height: 70px;
+    box-shadow: none;
+    border-radius: 50%;
+}
+.btn_achivment {
+    background-color: rgba(0,0,0,0.5);
+    border: 5px solid rgba(1,88,154,0.5);
+}
