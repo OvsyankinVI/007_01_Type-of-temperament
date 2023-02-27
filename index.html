@@ -37,47 +37,84 @@
             </div>
         </div>
 
-        <div class="app achivments" v-show='showAchivments'>
-            <div class="abb__body">
-                <div class="app__body-inner">
-                    <h2 class="app__body-title">
-                        <i class="fa fa-trophy"></i>
-                        Типы темпераментов
-                    </h2>
-                    <div class="app__body-top">
-                        <div class="app__card">
-                            <div class="app__card-text">Счет</div>
-                            <div class="app__card-count">0</div>
-                        </div>
-                        <div class="app__card">
-                            <div class="app__card-text">Открыто рас</div>
-                            <div class="app__card-count">0</div>
-                        </div>
-                        <div class="app__card">
-                            <div class="app__card-text">Всего игр</div>
-                            <div class="app__card-count">0</div>
-                        </div>
-                        <div class="app__card">
-                            <div class="app__card-text">Любимая раса</div>
-                            <div class="app__card-count">0</div>
-                        </div>
-                    </div>
-                    <div class="app__body-middle">
-                        <div class="app_result">
-                            <div class="app__result-score">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <div class="app__result-count">150</div>
-                            </div>
-                            <div class="app__result-name">Зерг</div>
-                            <div class="app__result-amount">5</div>
-                        </div>
-                    </div>
-                    <div class="app__body-bottom">
-                        <bottom class="app_btn btn__black btn_achivment" @click="goToMain">
-                            <i class="fa fa-reply" aria-hidden="true"></i>
-                        </bottom>
-                    </div>
+        <div class="app" v-show='showAchivments'>
+            <div class="app__body type">
+                <button class="app_btn" v-on:click="goToHol">
+                    <div class="app__btn-text">Холерик</div>
+                </button>
+                <button class="app_btn" v-on:click="goToSang">
+                    <div class="app__btn-text">Сангвиник</div>
+                </button>
+                <button class="app_btn" v-on:click="goToFleg">
+                    <div class="app__btn-text">Флегматик</div>
+               </button>
+                <button class="app_btn" v-on:click="goToMel">
+                    <div class="app__btn-text">Меланхолик</div>
+               </button>
+               <bottom class="app_btn btn__black" @click="goToMain">
+                <i class="fa fa-reply" aria-hidden="true"></i>
+            </bottom>
+            </div>
+        </div>
+
+        <div class="app" v-show='showHol'>
+            <div class="app__header">
+                <div class="app__count">Меланхолик</div>
+            </div>
+            <div class="app__body">
+                <div class="results__text-box">
+                    <p class="results__text types">Гиппократ описывает меланхоликов как легкоранимых, вяло реагирующих на окружающее, замкнутых, сдержанных в речи людей. Несмотря на столь «незавидные» характеристики, меланхолики обладают главным важным качеством — высокой чувствительностью нервной системы, позволяющей им становиться великими музыкантами, художниками, философами. У меланхоликов есть определенный запас прочности, поэтому они вовсе не такие хрупкие, как можно было бы показаться, однако по сравнению с флегматиками, сангвиниками и холериками этот тип темперамента считается наиболее слабым.</p>
+                    <p class="results__text types">Меланхоликов отличает вдумчивость, повышенная тревожность, негативное или как минимум невосторженное отношение к переменам в жизни. Представители меланхолического темперамента дорожат своим бытом и стараются не изменять привычкам, закутываясь в своеобразный кокон. Из всех типов темпераментов меланхолику сложнее всего покинуть зону комфорта.</p>
                 </div>
+               <bottom class="app_btn btn__black" @click="goToAchivments">
+                <i class="fa fa-reply" aria-hidden="true"></i>
+            </bottom>
+            </div>
+        </div>
+
+        <div class="app" v-show='showSang'>
+            <div class="app__header">
+                <div class="app__count">Меланхолик</div>
+            </div>
+            <div class="app__body">
+                <div class="results__text-box">
+                    <p class="results__text types">Гиппократ описывает меланхоликов как легкоранимых, вяло реагирующих на окружающее, замкнутых, сдержанных в речи людей. Несмотря на столь «незавидные» характеристики, меланхолики обладают главным важным качеством — высокой чувствительностью нервной системы, позволяющей им становиться великими музыкантами, художниками, философами. У меланхоликов есть определенный запас прочности, поэтому они вовсе не такие хрупкие, как можно было бы показаться, однако по сравнению с флегматиками, сангвиниками и холериками этот тип темперамента считается наиболее слабым.</p>
+                    <p class="results__text types">Меланхоликов отличает вдумчивость, повышенная тревожность, негативное или как минимум невосторженное отношение к переменам в жизни. Представители меланхолического темперамента дорожат своим бытом и стараются не изменять привычкам, закутываясь в своеобразный кокон. Из всех типов темпераментов меланхолику сложнее всего покинуть зону комфорта.</p>
+                </div>
+               <bottom class="app_btn btn__black" @click="goToAchivments">
+                <i class="fa fa-reply" aria-hidden="true"></i>
+            </bottom>
+            </div>
+        </div>
+
+        <div class="app" v-show='showFleg'>
+            <div class="app__header">
+                <div class="app__count">Меланхолик</div>
+            </div>
+            <div class="app__body">
+                <div class="results__text-box">
+                    
+                    <p class="results__text types">Гиппократ описывает меланхоликов как легкоранимых, вяло реагирующих на окружающее, замкнутых, сдержанных в речи людей. Несмотря на столь «незавидные» характеристики, меланхолики обладают главным важным качеством — высокой чувствительностью нервной системы, позволяющей им становиться великими музыкантами, художниками, философами. У меланхоликов есть определенный запас прочности, поэтому они вовсе не такие хрупкие, как можно было бы показаться, однако по сравнению с флегматиками, сангвиниками и холериками этот тип темперамента считается наиболее слабым.</p>
+                    <p class="results__text types">Меланхоликов отличает вдумчивость, повышенная тревожность, негативное или как минимум невосторженное отношение к переменам в жизни. Представители меланхолического темперамента дорожат своим бытом и стараются не изменять привычкам, закутываясь в своеобразный кокон. Из всех типов темпераментов меланхолику сложнее всего покинуть зону комфорта.</p>
+                </div>
+               <bottom class="app_btn btn__black" @click="goToAchivments">
+                <i class="fa fa-reply" aria-hidden="true"></i>
+            </bottom>
+            </div>
+        </div>
+
+        <div class="app" v-show='showMel'>
+            <div class="app__header">
+                <div>Меланхолик</div>
+            </div>
+            <div class="app__body">
+                <div class="results__text-box">
+                    <p class="results__text types">Гиппократ описывает меланхоликов как легкоранимых, вяло реагирующих на окружающее, замкнутых, сдержанных в речи людей. Несмотря на столь «незавидные» характеристики, меланхолики обладают главным важным качеством — высокой чувствительностью нервной системы, позволяющей им становиться великими музыкантами, художниками, философами. У меланхоликов есть определенный запас прочности, поэтому они вовсе не такие хрупкие, как можно было бы показаться, однако по сравнению с флегматиками, сангвиниками и холериками этот тип темперамента считается наиболее слабым.</p>
+                    <p class="results__text types">Меланхоликов отличает вдумчивость, повышенная тревожность, негативное или как минимум невосторженное отношение к переменам в жизни. Представители меланхолического темперамента дорожат своим бытом и стараются не изменять привычкам, закутываясь в своеобразный кокон. Из всех типов темпераментов меланхолику сложнее всего покинуть зону комфорта.</p>
+                </div>
+               <bottom class="app_btn btn__black" @click="goToAchivments">
+                <i class="fa fa-reply" aria-hidden="true"></i>
+            </bottom>
             </div>
         </div>
 
@@ -147,142 +184,6 @@
 
     <script src="js/vue.js"></script>
     <script src="js/const.js"></script>
-    <script>
-        let app = new Vue({
-            el: '.main',
-            data: {
-                showMain: true,
-                showSocial: false,
-                showAchivments: false,
-                showQuestions: false,
-                showResult: false,
-                number: 0,
-                score: {
-                    'zerg': 0,
-                    'primal': 0,
-                    'terran': 0,
-                    'infested': 0
-                },
-                totalGame: localStorage.getItem('sc2TotalGames') ? JSON.parse(localStorage.getItem('sc2TotalGames')) : {
-                    'zerg': 0,
-                    'primal': 0,
-                    'terran': 0,
-                    'infested': 0,
-                    'protoss': 0,
-                    'taldarim': 0,
-                    'hybrid': 0,
-                },
-                totalGames: localStorage.getItem('sc2TotalGames') ? localStorage.getItem('sc2TotalGames') : 0,
-                questions: questions, 
-                results: results,
-                resultRace: 'infested',
-            },
-            methods: {
-                goToMain() {
-                    this.showMain = true
-                    this.showSocial = false
-                    this.showAchivments = false
-                    this.showQuestions = false
-                    this.showResult = false
-                },
-                goToSocial() {
-                    this.showMain = false
-                    this.showSocial = true
-                    this.showAchivments = false
-                    this.showQuestions = false
-                    this.showResult = false
-                },
-                goToAchivments() {
-                    this.showMain = false
-                    this.showSocial = false
-                    this.showAchivments = true
-                    this.showQuestions = false
-                    this.showResult = false
-                       },
-                goToQuestions() {
-                    this.score = {
-                    'zerg': 0,
-                    'primal': 0,
-                    'terran': 0,
-                    'infested': 0
-                    }
-                    this.showMain = false
-                    this.showSocial = false
-                    this.showAchivments = false
-                    this.showQuestions = true
-                    this.showResult = false
-                },
-                goToResult(race) {
-                    this.showMain = false
-                    this.showSocial = false
-                    this.showAchivments = false
-                    this.showQuestions = false
-                    this.showResult = true
-                    this.resultRace = race
-                },
-                nextQuestions(answer) {
-                    if(this.number == 24) {
-                        this.number = 0
-                        this.endGame()
-                    } else {
-                        this.number++
-                    }
-                eval(answer) 
-                },
-                endGame() {
-                    this.totalGames++;
-                    localStorage.setItem('sc2TotalGames', this.totalGames)
-                    if(this.score.zerg > this.score.primal &
-                    this.score.zerg > this.score.terran & 
-                    this.score.zerg > this.score.infested &
-                    this.score.zerg > this.score.protoss &
-                    this.score.zerg > this.score.taldarim &
-                    this.score.zerg > this.score.hybrid) {
-                        this.goToResult('zerg')
-                        this.totalGame.zerg++
-                    } else if(this.score.primal > this.score.zerg &
-                    this.score.primal > this.score.terran & 
-                    this.score.primal > this.score.infested &
-                    this.score.primal > this.score.protoss &
-                    this.score.primal > this.score.taldarim &
-                    this.score.primal > this.score.hybrid) {
-                        this.goToResult('primal')
-                        this.totalGame.primal++
-                    } else if(this.score.terran > this.score.zerg &
-                    this.score.terran > this.score.primal & 
-                    this.score.terran > this.score.infested &
-                    this.score.terran > this.score.protoss &
-                    this.score.terran > this.score.taldarim &
-                    this.score.terran > this.score.hybrid) {
-                        this.goToResult('terran')
-                        this.totalGame.terran++
-                    } else {
-                        this.goToResult('infested')
-                        this.totalGame.infested++
-                    }
-                    localStorage.setItem('sc2TotalGame', JSON.stringify(this.totalGame))
-                }
-            }
-        })
-        let audio = new Audio('audio/soundtrack.mp3')
-        let audio_btn = document.querySelector('.btn__sound')
-        let audio_icon = document.querySelector('.btn__sound i')
-
-        audio.muted = true;
-        audio.autoplay = true;
-        audio.volume = 0.2
-
-        audio_btn.addEventListener('click', function(){
-            if(audio.muted) {
-                audio.muted = false
-                audio_icon.classList.add('fa-volume-up')
-                audio_icon.classList.remove('fa-volume-off')
-            } else if(!audio.muted) {
-                audio.muted = true
-                audio_icon.classList.add('fa-volume-off')
-                audio_icon.classList.remove('fa-volume-up')
-            }
-        })
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>

@@ -35,7 +35,6 @@ i.fa {
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
-
 }
 .app__header {
     background-color: rgba(255, 255, 255, 0.567);
@@ -59,6 +58,9 @@ i.fa {
     justify-content: space-between;
     height: 100%;
     overflow: auto;
+}
+.type {
+    margin: 150px 0;
 }
 .app_btn {
     padding: 10px 20px;
@@ -219,6 +221,10 @@ i.fa {
 }
 .results__text {
     margin-bottom: 20px;
+}
+.types {
+    color: #fff;
+    padding: 20px;
 }
 .app.results {
     animation: none;
