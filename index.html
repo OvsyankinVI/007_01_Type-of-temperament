@@ -193,16 +193,12 @@
                     this.showResult = false
                 },
                 goToAchivments() {
-                    if(this.totalGame > 0) {
-                        this.showMain = false
-                        this.showSocial = false
-                        this.showAchivments = true
-                        this.showQuestions = false
-                        this.showResult = false
-                        } else {
-                            this.goToQuestions()
-                        }
-                    },
+                    this.showMain = false
+                    this.showSocial = false
+                    this.showAchivments = true
+                    this.showQuestions = false
+                    this.showResult = false
+                       },
                 goToQuestions() {
                     this.score = {
                     'zerg': 0,
