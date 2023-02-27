@@ -13,36 +13,36 @@
 <body>
     <div class="main">
         
-        <!-- <div class="app">
+        <div class="app" v-show="showMain">
             <div class="app__header">
                 <img src="img/logo.png" class="app__logo">
             </div>
             <div class="app__body">
-                <button class="app_btn">
+                <button class="app_btn" v-on:click="goToQuestions">
                     <i class="fa fa-play-circle-o" aria-hidden="true"></i>
-                    <div class="app__btn-text">Начать</div>
+                    <div class="app__btn-text">Определить темперамент</div>
                 </button>
-                <button class="app_btn">
+                <button class="app_btn" v-on:click="goToAchivments">
                     <i class="fa fa-trophy" aria-hidden="true"></i>
-                    <div class="app__btn-text">Достижения</div>
+                    <div class="app__btn-text">Типы темпераментов</div>
                 </button>
-                <button class="app_btn">
+                <button class="app_btn" v-on:click="goToSocial">
                     <i class="fa fa-user" aria-hidden="true"></i>
                     <div class="app__btn-text">Автор</div>
                </button>
-                <button class="app_btn">
-                    <i class="fa fa-volume-up" aria-hidden="true"></i>
+                <button class="app_btn btn__sound" >
+                    <i class="fa fa-volume-off" aria-hidden="true"></i>
                     <div class="app__btn-text">Звук</div>
                </button>
             </div>
-        </div> --> 
+        </div>
 
-        <!-- <div class="app achivments">
+        <div class="app achivments" v-show='showAchivments'>
             <div class="abb__body">
                 <div class="app__body-inner">
                     <h2 class="app__body-title">
                         <i class="fa fa-trophy"></i>
-                        Достижения
+                        Типы темпераментов
                     </h2>
                     <div class="app__body-top">
                         <div class="app__card">
@@ -73,29 +73,31 @@
                         </div>
                     </div>
                     <div class="app__body-bottom">
-                        <bottom class="app_btn btn__black btn_achivment">
+                        <bottom class="app_btn btn__black btn_achivment" @click="goToMain">
                             <i class="fa fa-reply" aria-hidden="true"></i>
                         </bottom>
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
 
-        <!-- <div class="app">
+        <div class="app" v-show="showQuestions">
             <div class="app__header">
                 <div class="app__heder-inner">
-                    <div class="app__count"># 1</div>
-                    <div class="app__text">Текст вопроса</div>
+                    <div class="app__count"># {{number+1}}</div>
+                    <div class="app__text">{{questions[number][0]}}</div>
                 </div>
             </div>
             <div class="app__body">
-                <button class="app_btn">
-                    <div class="app__btn-text">Ответ 1</div>
+                <button class="app_btn" 
+                    v-for="(answer, i) in questions[number][1]"
+                    @click="nextQuestions(questions[number][2][i])">
+                    <div class="app__btn-text">{{answer}}</div>
                 </button>                
             </div>
-        </div> -->
+        </div>
 
-        <!-- <div class="app">
+        <div class="app" v-show="showSocial">
             <div class="app__body">
                 <a href="https://instagram.com/ovsyankin_717" target="_blank" class="app_btn">
                     <i class="fa fa-instagram"></i>
@@ -113,27 +115,27 @@
                     <i class="fa fa-youtube-play"></i>
                     <div class="app__btn-text">Youtube</div>
                 </a>
-                <bottom class="app_btn btn__black">
+                <bottom class="app_btn btn__black" @click="goToMain">
                     <i class="fa fa-reply" aria-hidden="true"></i>
                 </bottom>
             </div>
-        </div>  -->
+        </div>
 
-        <div class="app results" data-race="zerg">
+        <div class="app results" v-show="showResult" v-bind:data-race="resultRace">
             <div class="app__body">
                 <div class="app__results-inner">
-                    <div class="results__title">Холерик</div>
+                    <div class="results__title">{{results[resultRace].name}}</div>
                     <div class="results__img">
-                        <img src="img/zerg_logo.png" alt="">
+                        <img :src="'img/'+resultRace+'_logo.png'" alt="">
                     </div>
                     <div class="results__text-box">
-                        <p class="results__text">Холерик — горячий, импульсивный, стремительно реагирующий на ситуацию, страстный и неуравновешенный. Среди особенностей этого типа темперамента – он никогда не сидит на месте, способен преодолевать многие трудности, но подвержен резким переменам настроения, сильным эмоциональным вспышкам. Холерик – это человек-непоседа, вечный двигатель, который все время куда-то спешит, пытается сделать несколько дел одновременно, однако не всегда доводит их до конца. В отличие от сангвиника, холерика сложно назвать жизнерадостным — его энергичность порой приобретает форму конфликтности.</p>
-                        <p class="results__quote">В организме холериков преобладает желтая желчь, что делает представителей этого типа темперамента истеричными, несдержанными, необузданными.</p>
-                        <p class="results__quote">Им свойственна агрессивность, они легко заводятся, выплескивая эмоции на окружающих, и точно так же легко остывают и успокаиваются, особенно когда чувствуют, что им идут навстречу.</p>
-                        <p class="results__author">Гиппократ</p>
+                        <p class="results__text">{{results[resultRace].description}}</p>
+                        <p class="results__quote">{{results[resultRace].quote1}}</p>
+                        <p class="results__quote">{{results[resultRace].quote2}}</p>
+                        <p class="results__author">{{results[resultRace].author}}</p>
                     </div>
                     <div>
-                        <button class="app_btn btn__black btn__zerg">
+                        <button class="app_btn btn__black btn__zerg" v-on:click="goToAchivments">
                             <i class="fa fa-reply" aria-hidden="true"></i>
                         </button>
                     </div>
@@ -145,5 +147,146 @@
 
     <script src="js/vue.js"></script>
     <script src="js/const.js"></script>
+    <script>
+        let app = new Vue({
+            el: '.main',
+            data: {
+                showMain: true,
+                showSocial: false,
+                showAchivments: false,
+                showQuestions: false,
+                showResult: false,
+                number: 0,
+                score: {
+                    'zerg': 0,
+                    'primal': 0,
+                    'terran': 0,
+                    'infested': 0
+                },
+                totalGame: localStorage.getItem('sc2TotalGames') ? JSON.parse(localStorage.getItem('sc2TotalGames')) : {
+                    'zerg': 0,
+                    'primal': 0,
+                    'terran': 0,
+                    'infested': 0,
+                    'protoss': 0,
+                    'taldarim': 0,
+                    'hybrid': 0,
+                },
+                totalGames: localStorage.getItem('sc2TotalGames') ? localStorage.getItem('sc2TotalGames') : 0,
+                questions: questions, 
+                results: results,
+                resultRace: 'infested',
+            },
+            methods: {
+                goToMain() {
+                    this.showMain = true
+                    this.showSocial = false
+                    this.showAchivments = false
+                    this.showQuestions = false
+                    this.showResult = false
+                },
+                goToSocial() {
+                    this.showMain = false
+                    this.showSocial = true
+                    this.showAchivments = false
+                    this.showQuestions = false
+                    this.showResult = false
+                },
+                goToAchivments() {
+                    if(this.totalGame > 0) {
+                        this.showMain = false
+                        this.showSocial = false
+                        this.showAchivments = true
+                        this.showQuestions = false
+                        this.showResult = false
+                        } else {
+                            this.goToQuestions()
+                        }
+                    },
+                goToQuestions() {
+                    this.score = {
+                    'zerg': 0,
+                    'primal': 0,
+                    'terran': 0,
+                    'infested': 0
+                    }
+                    this.showMain = false
+                    this.showSocial = false
+                    this.showAchivments = false
+                    this.showQuestions = true
+                    this.showResult = false
+                },
+                goToResult(race) {
+                    this.showMain = false
+                    this.showSocial = false
+                    this.showAchivments = false
+                    this.showQuestions = false
+                    this.showResult = true
+                    this.resultRace = race
+                },
+                nextQuestions(answer) {
+                    if(this.number == 24) {
+                        this.number = 0
+                        this.endGame()
+                    } else {
+                        this.number++
+                    }
+                eval(answer) 
+                },
+                endGame() {
+                    this.totalGames++;
+                    localStorage.setItem('sc2TotalGames', this.totalGames)
+                    if(this.score.zerg > this.score.primal &
+                    this.score.zerg > this.score.terran & 
+                    this.score.zerg > this.score.infested &
+                    this.score.zerg > this.score.protoss &
+                    this.score.zerg > this.score.taldarim &
+                    this.score.zerg > this.score.hybrid) {
+                        this.goToResult('zerg')
+                        this.totalGame.zerg++
+                    } else if(this.score.primal > this.score.zerg &
+                    this.score.primal > this.score.terran & 
+                    this.score.primal > this.score.infested &
+                    this.score.primal > this.score.protoss &
+                    this.score.primal > this.score.taldarim &
+                    this.score.primal > this.score.hybrid) {
+                        this.goToResult('primal')
+                        this.totalGame.primal++
+                    } else if(this.score.terran > this.score.zerg &
+                    this.score.terran > this.score.primal & 
+                    this.score.terran > this.score.infested &
+                    this.score.terran > this.score.protoss &
+                    this.score.terran > this.score.taldarim &
+                    this.score.terran > this.score.hybrid) {
+                        this.goToResult('terran')
+                        this.totalGame.terran++
+                    } else {
+                        this.goToResult('infested')
+                        this.totalGame.infested++
+                    }
+                    localStorage.setItem('sc2TotalGame', JSON.stringify(this.totalGame))
+                }
+            }
+        })
+        let audio = new Audio('audio/soundtrack.mp3')
+        let audio_btn = document.querySelector('.btn__sound')
+        let audio_icon = document.querySelector('.btn__sound i')
+
+        audio.muted = true;
+        audio.autoplay = true;
+        audio.volume = 0.2
+
+        audio_btn.addEventListener('click', function(){
+            if(audio.muted) {
+                audio.muted = false
+                audio_icon.classList.add('fa-volume-up')
+                audio_icon.classList.remove('fa-volume-off')
+            } else if(!audio.muted) {
+                audio.muted = true
+                audio_icon.classList.add('fa-volume-off')
+                audio_icon.classList.remove('fa-volume-up')
+            }
+        })
+    </script>
 </body>
 </html>

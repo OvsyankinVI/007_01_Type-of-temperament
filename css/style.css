@@ -38,7 +38,7 @@ i.fa {
 
 }
 .app__header {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.567);
     border-bottom: 7px solid #fdb54d;
     min-height: 247px;
     display: flex;
@@ -70,7 +70,7 @@ i.fa {
     width: 240px;
     background-color: #1978d3;
     box-shadow: 0 7px 0 0 #01579a;
-    margin: 0 auto;
+    margin: 10px auto;
     border-radius: 30px;
     text-decoration: none;
     font-style: 16px;
@@ -175,7 +175,7 @@ i.fa {
     border: 5px solid rgba(1,88,154,0.5);
 }
 .app__heder-inner {
-    color: #fff;
+    color: #000;
     text-align: center;
 }
 .app__count {
@@ -205,9 +205,12 @@ i.fa {
 .results__img {
     text-align: center;
     margin-bottom: 20px;
+    
 }
 .results__img img{
     width: 250px;
+    border: 20px solid #fff;
+    border-radius: 125px;
 }
 .results__text-box {
     margin-bottom: 20px;
