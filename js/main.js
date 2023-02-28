@@ -107,7 +107,7 @@ let app = new Vue({
             this.showMel = true
         },
         nextQuestions(answer) {
-            if(this.number == 24) {
+            if(this.number == 13) {
                 this.number = 0
                 this.endGame()
             } else {
@@ -120,26 +120,17 @@ let app = new Vue({
             localStorage.setItem('sc2TotalGames', this.totalGames)
             if(this.score.zerg > this.score.primal &
             this.score.zerg > this.score.terran & 
-            this.score.zerg > this.score.infested &
-            this.score.zerg > this.score.protoss &
-            this.score.zerg > this.score.taldarim &
-            this.score.zerg > this.score.hybrid) {
+            this.score.zerg > this.score.infested) {
                 this.goToResult('zerg')
                 this.totalGame.zerg++
             } else if(this.score.primal > this.score.zerg &
             this.score.primal > this.score.terran & 
-            this.score.primal > this.score.infested &
-            this.score.primal > this.score.protoss &
-            this.score.primal > this.score.taldarim &
-            this.score.primal > this.score.hybrid) {
+            this.score.primal > this.score.infested) {
                 this.goToResult('primal')
                 this.totalGame.primal++
             } else if(this.score.terran > this.score.zerg &
             this.score.terran > this.score.primal & 
-            this.score.terran > this.score.infested &
-            this.score.terran > this.score.protoss &
-            this.score.terran > this.score.taldarim &
-            this.score.terran > this.score.hybrid) {
+            this.score.terran > this.score.infested) {
                 this.goToResult('terran')
                 this.totalGame.terran++
             } else {
