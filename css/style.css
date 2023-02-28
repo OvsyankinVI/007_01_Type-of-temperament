@@ -219,18 +219,19 @@ i.fa {
     border-radius: 125px;
 }
 .results__text-box {
-    margin-bottom: 20px;
+    margin: 20px 10px;
     font-size: 16px;
     line-height: 20px;
+    background-color: #00000036;
+    padding: 5px;
 }
 .results__text {
     margin-bottom: 10px;
 }
 .types {
-    padding: 20px 20px;
+    padding: 10px;
     color: #fff;
     font-size: 20px;
-    background-color: #00000032;
 }
 .btn_text {
     height: 70px;
