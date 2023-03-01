@@ -124,7 +124,7 @@
         <div class="app" v-show="showQuestions">
             <div class="app__header">
                 <div class="app__heder-inner">
-                    <div class="app__count"># {{number+1}}</div>
+                    <div class="app__count"># {{number+1}} из 14</div>
                     <div class="app__text">{{questions[number][0]}}</div>
                 </div>
             </div>
@@ -161,18 +161,15 @@
             </div>
         </div>
 
-        <div class="app results" v-show="showResult" v-bind:data-race="resultRace">
+        <div class="app results" v-show="showResult" v-bind:data-race="resultType">
             <div class="app__body">
                 <div class="app__results-inner">
-                    <div class="results__title">{{results[resultRace].name}}</div>
+                    <div class="results__title">{{results[resultType].name}}</div>
                     <div class="results__img">
-                        <img :src="'img/'+resultRace+'_logo.png'" alt="">
+                        <img :src="'img/'+resultType+'_logo.png'" alt="">
                     </div>
                     <div class="results__text-box">
-                        <p class="results__text">{{results[resultRace].description}}</p>
-                        <p class="results__quote">{{results[resultRace].quote1}}</p>
-                        <p class="results__quote">{{results[resultRace].quote2}}</p>
-                        <p class="results__author">{{results[resultRace].author}}</p>
+                        <p class="results__text">{{results[resultType].description}}</p>
                     </div>
                     <div>
                         <button class="app_btn btn__black btn__zerg" v-on:click="goToAchivments">

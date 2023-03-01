@@ -27,7 +27,7 @@ i.fa {
     background-image: url(../img/background__main.jpg);
     background-repeat: repeat-x;
     background-size: cover;
-    animation: slide 40s linear infinite;
+    animation: slide 80s linear infinite;
 }
 .app {
     height: 100vh;
@@ -215,7 +215,7 @@ i.fa {
 }
 .results__img img{
     width: 250px;
-    border: 15px solid #fff;
+    border: 20px solid #fff;
     border-radius: 125px;
 }
 .results__text-box {
@@ -247,17 +247,17 @@ i.fa {
     background-size: cover;
     background-position: center center;
 }
-.app.results[data-race='zerg'] {
-    background-image: url(../img/zerg_bg.jpg);
+.app.results[data-race='Hol'] {
+    background-image: url(../img/Hol_bg.jpg);
 }
-.app.results[data-race='primal'] {
-    background-image: url(../img/primal_bg.jpg);
+.app.results[data-race='Sang'] {
+    background-image: url(../img/Sang_bg.jpg);
 }
-.app.results[data-race='terran'] {
-    background-image: url(../img/terran_bg.jpg);
+.app.results[data-race='Fleg'] {
+    background-image: url(../img/Fleg_bg.jpg);
 }
-.app.results[data-race='infested'] {
-    background-image: url(../img/infested_bg.jpg);
+.app.results[data-race='Mel'] {
+    background-image: url(../img/Mel_bg.JPG);
 }
 .btn__zerg {
     background-color: rgba(227, 113, 113, 0.5);

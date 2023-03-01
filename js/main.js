@@ -12,24 +12,14 @@ let app = new Vue({
         showMel: false,
         number: 0,
         score: {
-            'zerg': 0,
-            'primal': 0,
-            'terran': 0,
-            'infested': 0
+            'Fleg': 0,
+            'Mel': 0,
+            'Hol': 0,
+            'Sang': 0
         },
-        totalGame: localStorage.getItem('sc2TotalGames') ? JSON.parse(localStorage.getItem('sc2TotalGames')) : {
-            'zerg': 0,
-            'primal': 0,
-            'terran': 0,
-            'infested': 0,
-            'protoss': 0,
-            'taldarim': 0,
-            'hybrid': 0,
-        },
-        totalGames: localStorage.getItem('sc2TotalGames') ? localStorage.getItem('sc2TotalGames') : 0,
         questions: questions, 
         results: results,
-        resultRace: 'infested',
+        resultType: 'Mel',
     },
     methods: {
         goToMain() {
@@ -59,10 +49,10 @@ let app = new Vue({
                },
         goToQuestions() {
             this.score = {
-            'zerg': 0,
-            'primal': 0,
-            'terran': 0,
-            'infested': 0
+                'Fleg': 0,
+                'Mel': 0,
+                'Hol': 0,
+                'Sang': 0            
             }
             this.showMain = false
             this.showSocial = false
@@ -76,7 +66,7 @@ let app = new Vue({
             this.showAchivments = false
             this.showQuestions = false
             this.showResult = true
-            this.resultRace = race
+            this.resultType = race
         },
         goToHol() {
             this.showAchivments = false
@@ -116,28 +106,22 @@ let app = new Vue({
         eval(answer) 
         },
         endGame() {
-            this.totalGames++;
             localStorage.setItem('sc2TotalGames', this.totalGames)
-            if(this.score.zerg > this.score.primal &
-            this.score.zerg > this.score.terran & 
-            this.score.zerg > this.score.infested) {
-                this.goToResult('zerg')
-                this.totalGame.zerg++
-            } else if(this.score.primal > this.score.zerg &
-            this.score.primal > this.score.terran & 
-            this.score.primal > this.score.infested) {
-                this.goToResult('primal')
-                this.totalGame.primal++
-            } else if(this.score.terran > this.score.zerg &
-            this.score.terran > this.score.primal & 
-            this.score.terran > this.score.infested) {
-                this.goToResult('terran')
-                this.totalGame.terran++
+            if(this.score.Hol > this.score.Sang &
+            this.score.Hol > this.score.Fleg & 
+            this.score.Hol > this.score.Mel) {
+                this.goToResult('Hol')
+            } else if(this.score.Sang > this.score.Hol &
+            this.score.Sang > this.score.Fleg & 
+            this.score.Sang > this.score.Mel) {
+                this.goToResult('Sang')
+            } else if(this.score.Fleg > this.score.Hol &
+            this.score.Fleg > this.score.Sang & 
+            this.score.Fleg > this.score.Mel) {
+                this.goToResult('Fleg')
             } else {
-                this.goToResult('infested')
-                this.totalGame.infested++
+                this.goToResult('Mel')
             }
-            localStorage.setItem('sc2TotalGame', JSON.stringify(this.totalGame))
         }
     }
 })
